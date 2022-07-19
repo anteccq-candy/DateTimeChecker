@@ -15,7 +15,7 @@ public class DateTimeValidator : IDateTimeValidator
             return false;
         }
 
-        var now = DateTimeOffset.UtcNow;
+        var now = DateTimeOffset.Now;
 
         try
         {
