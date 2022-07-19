@@ -5,11 +5,17 @@
     <TargetFramework>net6.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
-	<PublishReadyToRun>true</PublishReadyToRun>
-	<RuntimeIdentifier>win-x64</RuntimeIdentifier>
-	<SelfContained>true</SelfContained>
-	<PublishSingleFile>true</PublishSingleFile>
+	<ApplicationIcon>timer.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+  	<DebugType>None</DebugType>
+  	<DebugSymbols>false</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="timer.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="ReactiveProperty.WPF" Version="8.1.2" />
