@@ -7,10 +7,10 @@
         xmlns:converter="clr-namespace:DateTimeChecker.Views.Converter"
         xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
         mc:Ignorable="d"
-        Title="MainWindow" Height="150" Width="600" MinHeight="150" d:DataContext="{d:DesignInstance vm:MainWindowViewModel}"
+        Title="DateTime ちぇっか～" Height="150" Width="600" MinHeight="150" d:DataContext="{d:DesignInstance vm:MainWindowViewModel}"
         Style="{StaticResource UiWindow}">
     <Window.Resources>
-        <converter:BoolToColorValidator x:Key="Bool2Color"/>
+        <converter:InputValidationToColorValidator x:Key="InputValidation2Color"/>
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -35,7 +35,7 @@
                     <ColumnDefinition Width="10"/>
                 </Grid.ColumnDefinitions>
                 <TextBox Height="40" BorderThickness="1" FontSize="16" VerticalAlignment="Center" Text="{Binding InputDateTimeFormat.Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                <Rectangle Grid.Column="1" RadiusX="1" RadiusY="3" Height="40" Fill="{Binding ValidationResult.Value, Converter={StaticResource Bool2Color}}"/>
+                <Rectangle Grid.Column="1" RadiusX="1" RadiusY="3" Height="40" Fill="{Binding ValidationResult.Value, Converter={StaticResource InputValidation2Color}}"/>
             </Grid>
             <TextBlock Grid.Row="1" Height="30" FontSize="16" Margin="0, 10" VerticalAlignment="Center" Text="{Binding OutputDateTime.Value, Mode=OneWay}"/>
         </Grid>
